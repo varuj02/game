@@ -15,7 +15,22 @@ class Vorsord extends KendaniEak{
         if (this.energy > 30) {
             this.getbomb();
         }
-
+        var vandak1 = random(this.yntrelVandak(1));
+        if (vandak1) {
+            matrix[this.y][this.x] = 0;
+            this.x = vandak1[0]
+            this.y = vandak1[1]
+            matrix[this.y][this.x] = 5;
+            this.energy++;
+            for (var i in grassArr) {
+                if (grassArr[i].x == this.x && grassArr[i].y == this.y) {
+                    grassArr.splice(i, 1);
+                    break;
+                }
+            }
+        }
+        else {
+            
         var vandak0 = random(this.yntrelVandak(0));
 
         if (vandak0) {
@@ -25,21 +40,7 @@ class Vorsord extends KendaniEak{
             matrix[this.y][this.x] = 5;
             this.energy++;
         }
-        else {
-            var vandak1 = random(this.yntrelVandak(1));
-            if (vandak1) {
-                matrix[this.y][this.x] = 0;
-                this.x = vandak1[0]
-                this.y = vandak1[1]
-                matrix[this.y][this.x] = 5;
-                this.energy++;
-                for (var i in grassArr) {
-                    if (grassArr[i].x == this.x && grassArr[i].y == this.y) {
-                        grassArr.splice(i, 1);
-                        break;
-                    }
-                }
-            }
+
         }
     }
     getbomb() {
