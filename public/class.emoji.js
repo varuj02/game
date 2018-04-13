@@ -53,7 +53,7 @@ class Emoji extends KendaniEak {
         if (vandak==5) {
             if (vorsordArr[i].x == vandak[0] && vorsordArr[i].y == vandak[1]) {
                 vorsordArr.splice(i, 1);
-                break;
+
             }
         }  
         matrix[this.y][this.x] = 0;

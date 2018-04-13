@@ -96,7 +96,7 @@ function setup() {
 function draw() {
 
     for (var y = 0; y < matrix.length; ++y) {
-        for (var x = 0; x < matrix[y].length; ++y) {
+        for (var x in matrix[y]) {
             if (matrix[y][x] == 0) {
                 fill("#acacac");
                 rect(x * side, y * side, side, side);
